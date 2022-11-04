@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xoá sản phẩm</title>
+</head>
+<body>
+<h1>Xoá sản phẩm</h1>
+<h2>Bạn có chắc?</h2>
+<p>
+    <a href="/products">Danh sách sản phẩm</a>
+</p>
+
+<!--/*@thymesVar id="product" type=""*/-->
+<form th:action="@{/delete-product}" th:object="${product}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Tên:</td>
+            <!--/*@thymesVar id="firstName" type=""*/-->
+            <td th:text="${product.name}"></td>
+        </tr>
+        <tr>
+            <td>Nhà sản xuất:</td>
+            <!--/*@thymesVar id="lastName" type=""*/-->
+            <td th:text="${product.producer}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Xoá"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

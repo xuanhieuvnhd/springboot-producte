@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo mới sản phẩm</title>
+</head>
+<body>
+<h1>Tạo mới sản phẩm</h1>
+<p>
+    <a href="/products">Danh sách sản phẩm</a>
+</p>
+<!--/*@thymesVar id="message" type=""*/-->
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+
+<!--/*@thymesVar id="product" type=""*/-->
+<form th:action="@{/create-product}" th:object="${product}" method="post">
+    <table>
+        <tr>
+            <td>Tên:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>Nhà sản xuất:</td>
+            <td><input type="text" th:field="*{producer}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Tạo"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
