@@ -21,7 +21,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format("Product[id=%d, firstName='%s', lastName='%s']", id, name, producer);
+        return String.format("Product[id=%d, name='%s', producer='%s']", id, name, producer);
     }
 
     public Long getId() {
